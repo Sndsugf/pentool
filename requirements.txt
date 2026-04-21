@@ -1,0 +1,53 @@
+# ══════════════════════════════════════════════════════
+# PENTEST AUTOMATION FRAMEWORK — Dépendances Python
+# ══════════════════════════════════════════════════════
+# Installation : pip install -r requirements.txt
+# Note : scapy nécessite sudo / droits admin pour les raw sockets
+
+# ── Interface CLI ──────────────────────────────────────
+rich>=13.7.0              # Affichage terminal coloré, progress bars, tables
+
+# ── Réseau & Scan ─────────────────────────────────────
+scapy>=2.5.0              # Paquets réseau bas niveau (TCP SYN, ARP, ICMP)
+requests>=2.31.0          # Requêtes HTTP (CVE API NVD, exploits HTTP)
+urllib3>=2.0.0            # Dépendance requests (SSL, pooling)
+
+# ── Reconnaissance ────────────────────────────────────
+dnspython==2.8.0
+idna==3.11
+markdown-it-py==4.0.0
+mdurl==0.1.2
+nslookup==1.8.1
+Pygments==2.20.0
+python-dateutil==2.9.0.post0
+python-dotenv==1.2.2
+python-nmap==0.7.1
+python-whois==0.9.6
+requests==2.33.1
+sh==2.2.2
+
+
+# ── Base de données ───────────────────────────────────
+# sqlite3 est inclus dans Python standard (pas besoin d'installer)
+
+# ── Rapport ───────────────────────────────────────────
+jinja2>=3.1.2             # Templates HTML pour le rapport
+weasyprint>=60.0          # Export PDF depuis HTML (nécessite libcairo)
+# Alternative légère si weasyprint pose problème :
+# pdfkit>=1.0.0           # Nécessite wkhtmltopdf installé sur le système
+reportlab
+
+# ── Configuration & Environnement ─────────────────────
+python-dotenv>=1.0.0      # Chargement des variables .env (clé API NVD, etc.)
+
+# ── Utilitaires ───────────────────────────────────────
+colorama>=0.4.6           # Compatibilité couleurs Windows
+ipaddress                 # Inclus Python 3.3+ (pas besoin d'installer)
+
+# ══════════════════════════════════════════════════════
+# OPTIONNEL — Améliorations futures
+# ══════════════════════════════════════════════════════
+# fastapi>=0.110.0        # Interface web pour lancer les scans
+# uvicorn>=0.27.0         # Serveur ASGI pour FastAPI
+# sqlalchemy>=2.0.0       # ORM si migration vers PostgreSQL
+# paramiko>=3.4.0         # SSH brute force / exploitation SSH
