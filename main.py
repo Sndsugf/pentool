@@ -612,7 +612,7 @@ def _display_payloads_for_scan(db_path: str, scan_id: int):
 # ─────────────────────────────────────────────
 @click.group(invoke_without_command=True)
 @click.pass_context
-def main(ctx):
+def cli(ctx):
     """
     \b
     ╔══════════════════════════════════╗
@@ -1584,4 +1584,4 @@ def payloads_scan_match(scan_id, db_path):
 # Entry point
 # ─────────────────────────────────────────────
 if __name__ == "__main__":
-    main()
+    cli()
